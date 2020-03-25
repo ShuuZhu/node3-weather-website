@@ -9,7 +9,7 @@ webForm.addEventListener('submit', e => {
   locaMessage.textContent = 'Loading...'
   forecastMessage.textContent = ''
   const search = document.querySelector('input')
-  fetch(`http://localhost:9898/weather?address=${search.value}`).then(res => {
+  fetch(`/weather?address=${search.value}`).then(res => {
     res.json().then(data => {
       if (data.error) return locaMessage.textContent = data.error
         locaMessage.textContent = data.location
